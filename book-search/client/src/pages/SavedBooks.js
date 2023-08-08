@@ -18,12 +18,13 @@ import { REMOVE_BOOK } from '../utils/mutations';
 
 const SavedBooks = () => {
 
-  const [loading, data] = useQuery(GET_ME);
+  const {loading, data} = useQuery(GET_ME);
   console.log("loading: ", loading);
   console.log("data: ", data);
   let userData = data?.me || {};
 
   const [removeBook] = useMutation(REMOVE_BOOK);
+  console.log(userData.savedBooks);
 
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;

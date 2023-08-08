@@ -15,7 +15,7 @@ const typeDefs = gql`
         description: String
         title: String!
         image: String
-        link: string
+        link: String
     }
 
     type Auth {
@@ -35,7 +35,7 @@ const typeDefs = gql`
     }
 
     input BookInput {
-        authors: [string]
+        authors: [String]
         description: String
         title: String!
         bookId: String!
