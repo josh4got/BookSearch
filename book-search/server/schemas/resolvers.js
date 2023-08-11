@@ -22,7 +22,6 @@ const resolvers = {
             return { token, user };
         },
         // login a user, sign a token, and send it back (to client/src/components/LoginForm.js)
-        //{body} is destructured req.body
         login: async (parent, {email, password}) => {
             const user = await User.findOne({ email });
 

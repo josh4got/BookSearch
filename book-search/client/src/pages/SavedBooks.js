@@ -34,6 +34,7 @@ const SavedBooks = () => {
       return false;
     }
 
+    // remove the selected book from the user's savedBooks array
     try {
       const { user } = await removeBook({
         variables: { bookId: bookId },
@@ -46,11 +47,12 @@ const SavedBooks = () => {
     }
   };
 
-  // if data isn't here yet, say so
+  // show loading if waiting for data
   if (loading) {
     return <h2>LOADING...</h2>;
   }
 
+  // render saved books onto the page
   return (
     <>
       <div fluid className="text-light bg-dark p-5">
